@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>img</title>
+		<style type="text/css">
+			* { padding:0; margin:0;}
+
+body { font-size:12px; font-family:"ו"; padding:100px;}
+
+ul { list-style-type:none;}
+
+a { color:#666; text-decoration:none;}
+
+a:hover { color:#000; text-decoration:underline;}
+
+img { border:none;}
+
+h1 { font-size:12px;}
+
+.a1 { width:595px;border:1px solid #e7e7e7;}
+
+.a2 { height:35px; background:#eee;}
+
+.a2 h1 { height:35px; line-height:35px; padding-left:10px; float:left;}
+
+.a3 { float:left; margin:14px 0 0 10px;}
+
+.a3 span { width:7px; height:7px; float:left;  background:url(img/1.gif) no-repeat; text-indent:-9999px; margin:0 2px; }
+
+.a3 span.one { background:url(img/2.gif) no-repeat; }
+
+.a4 { float:left; margin:7px 0 0 10px; }
+
+.a4 span { float:left; background:url(img/3.gif) no-repeat; width:31px; height:22px; text-indent:-9999px;}
+
+.a4 span.next { background-position:-31px 0; }
+
+.a2 em { float:right; margin:10px 12px 0 0;}
+
+.a5 { width:592px; height:450px; overflow:hidden; position:relative;  border-top:none;}
+
+.a5 ul li { float:left; margin:10px 2px 0; padding:8px;}
+
+.a6 { width:2500px; position:absolute; top:0; left;0;}
+
+.a6 h1 { padding:5px 0 5px 0; }
+
+.a6 h1 a { color:#aaa; }
+		</style>
+		<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var page=1;
+				var i=4;
+				//right
+				$(".next").click(function(){
+//					alert("");
+					var jq1=$(this).parents(".a1");
+					var jq2=jq1.find(".a6");
+					var jq3=jq1.find(".a5");
+					var jqwidth=jq3.width();
+					var len=jq2.find("li").length;
+					var page_count=Math.ceil(len/i);
+					if(!jq2.is(":animated")){
+						if(page==page_count){
+							jq2.animate({left:'0px'},"slow");
+							page=1;
+						}else{
+							jq2.animate({left:'-='+jqwidth},"slow");
+							page++;
+						}
+					}
+					jq1.find("span").eq((page-1)).addClass("one").siblings().removeClass("one");
+				});
+				//left
+				$(".prev").click(function(){
+					var jq1=$(this).parents(".a1");
+					var jq2=jq1.find(".a6");
+					var jq3=jq1.find(".a5");
+					var jqwidth=jq3.width();
+					var len=jq2.find("li").length;
+					var page_count=Math.ceil(len/i);
+					if(!jq2.is(":animated")){
+						if(page==1){
+							jq2.animate({left:'-='+jqwidth*(page_count-1)},"slow");
+							page=page_count;
+						}else{
+							jq2.animate({left:'+='+jqwidth},"slow");
+							page--;
+						}
+					}
+					jq1.find("span").eq((page-1)).addClass("one").siblings().removeClass("one");
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<div class="a1">
+			<div class="a2">
+				<h1>图片展示</h1>
+				<div class="a3"><span class="one">1</span><span>2</span><span>3</span><span>4</span></div>
+				<div class="a4"><span class="prev">prev</span><span class="next">next</span></div>
+				<em><a href="#">更多>></a></em>
+			</div>
+			<div class="a5">
+				<div class="a6">
+					<ul>
+						<li>
+							<a href="#"><img src="img/you.jpg" alt="hdw"/></a>
+							<h1><a href="#">标题一</a></h1>
+							<span>时间：<em>2011-2-24</em></span>
+						</li>
+						<li>
+							<a href="#"><img src="img/you.jpg" alt="hdw"/></a>
+							<h1><a href="#">标题一</a></h1>
+							<span>时间：<em>2011-2-24</em></span>
+						</li>
+						<li>
+							<a href="#"><img src="img/you.jpg" alt="hdw"/></a>
+							<h1><a href="#">标题一</a></h1>
+							<span>时间：<em>2011-2-24</em></span>
+						</li>
+						<li>
+							<a href="#"><img src="img/you.jpg" alt="hdw"/></a>
+							<h1><a href="#">标题一</a></h1>
+							<span>时间：<em>2011-2-24</em></span>
+						</li>
+						<li>
+							<a href="#"><img src="img/you.jpg" alt="hdw"/></a>
+							<h1><a href="#">标题一</a></h1>
+							<span>时间：<em>2011-2-24</em></span>
+						</li>
+						<li>
+							<a href="#"><img src="img/you.jpg" alt="hdw"/></a>
+							<h1><a href="#">标题一</a></h1>
+							<span>时间：<em>2011-2-24</em></span>
+						</li>
+						<li>
+							<a href="#"><img src="img/you.jpg" alt="hdw"/></a>
+							<h1><a href="#">标题一</a></h1>
+							<span>时间：<em>2011-2-24</em></span>
+						</li>
+						<li>
+							<a href="#"><img src="img/you.jpg" alt="hdw"/></a>
+							<h1><a href="#">标题一</a></h1>
+							<span>时间：<em>2011-2-24</em></span>
+						</li>
+						<li>
+							<a href="#"><img src="img/you.jpg" alt="hdw"/></a>
+							<h1><a href="#">标题一</a></h1>
+							<span>时间：<em>2011-2-24</em></span>
+						</li>
+						<li>
+							<a href="#"><img src="img/you.jpg" alt="hdw"/></a>
+							<h1><a href="#">标题一</a></h1>
+							<span>时间：<em>2011-2-24</em></span>
+						</li>
+						<li>
+							<a href="#"><img src="img/you.jpg" alt="hdw"/></a>
+							<h1><a href="#">标题一</a></h1>
+							<span>时间：<em>2011-2-24</em></span>
+						</li>
+						<li>
+							<a href="#"><img src="img/you.jpg" alt="hdw"/></a>
+							<h1><a href="#">标题一</a></h1>
+							<span>时间：<em>2011-2-24</em></span>
+						</li>
+						<li>
+							<a href="#"><img src="img/you.jpg" alt="hdw"/></a>
+							<h1><a href="#">标题一</a></h1>
+							<span>时间：<em>2011-2-24</em></span>
+						</li>
+						<li>
+							<a href="#"><img src="img/you.jpg" alt="hdw"/></a>
+							<h1><a href="#">标题一</a></h1>
+							<span>时间：<em>2011-2-24</em></span>
+						</li>
+						<li>
+							<a href="#"><img src="img/you.jpg" alt="hdw"/></a>
+							<h1><a href="#">标题一</a></h1>
+							<span>时间：<em>2011-2-24</em></span>
+						</li>
+						<li>
+							<a href="#"><img src="img/you.jpg" alt="hdw"/></a>
+							<h1><a href="#">标题一</a></h1>
+							<span>时间：<em>2011-2-24</em></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

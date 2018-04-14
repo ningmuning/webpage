@@ -1,0 +1,416 @@
+*{
+	list-style:none;
+	padding:0;
+	margin:0;
+	text-decoration:none;
+	height: auto;
+	color:#000;
+	
+	}
+	
+	body{
+		width:1400px;
+		height:auto;
+		margin:0 auto;
+		
+		}
+	
+
+
+
+
+
+
+#header{
+	height:50px;
+	}
+#header  img{
+		height:57px;
+	}
+#nov {
+	height:57px;
+	width:900px;
+	margin:0 auto;
+	position:relative;
+	}
+#header li a{
+	display:block;
+	float:left;
+	padding:0 32px;
+	line-height:50px;
+	text-align:center;
+	border-bottom:7px solid white;
+	}
+
+#nov li a:hover{
+	border-bottom-color:#24D197
+	}
+
+#nov span{
+	position:absolute;
+	right:0;
+	line-height:57px;
+	font-size:23px;
+	color:#24D197;
+	cursor:pointer;
+	
+	
+	}
+
+
+
+
+
+
+
+
+	
+	
+#pictureChange{
+	height:340px;
+	position:relative;
+	}
+#picture li img{
+	height:340px;
+	width:100%;
+	}
+	
+#btn li img{
+	width:140px;
+	height:78px;
+	cursor:pointer;
+	
+	}
+#btn{
+	position:absolute;
+	top:10px;
+	right:200px;
+	}
+
+
+
+
+
+
+
+
+
+ #addSearch {
+	width:400px;
+	height:110px;
+	position:absolute;
+	top:150px;
+	left:450px;
+	border:1px solid  #6F9;
+	border-radius:6px 6px 6px 6px;
+	padding-top:20px;
+	background:rgba(51,51,51,0.7);
+	
+	}
+
+
+#addSearch #text
+{
+	width:258px;
+	height:35px;
+	border:1px solid  #6F9;
+	border-radius:6px 6px 6px 6px;
+	}	
+#addSearch #submit{
+	height:37px;
+	width:50px;
+	border-radius:6px 6px 6px 6px;
+	color:#FFF;
+	background-color:#24D197;
+	}
+#addSearch  #novSmall li{
+	
+	float:left;
+	padding:0 12px;
+	border: 1px ;
+	border-radius:4px 4px 4px 4px;
+	color:#FFF;
+	cursor:pointer;
+	}
+ #novSmall{
+	 margin-left:46px;
+	
+	 
+	 
+	 }
+#addSearch #novSmall li:hover{
+	background-color:#24D197;
+	
+	}
+
+	
+		
+
+
+
+
+
+
+
+
+
+
+
+#left{
+	width:350px;
+	height:900px;
+	cursor:pointer;
+	
+	}
+
+
+.leftNov{
+	width:350px;
+	height:40px;
+	color:#8B8B8B;
+	line-height:40px;
+	}
+.leftNov span{
+	float:right;
+	padding:0 20px;
+	color:#D69F69;
+	
+	
+	}
+	
+#partent{
+		width:500px;
+		height:249px;
+		
+		}
+	
+	
+.big{
+	width:130px;
+	height:100px;
+	background:url(image/con02.png) no-repeat center;
+	position:relative;
+	float:left;
+	margin:5px 20px;
+	overflow:hidden;
+	
+	
+	
+	}
+ .add,.font{
+	 width:130px;
+	 height:100px;
+	 position:absolute;
+	 top:60px;
+	 left:0;
+	 }
+	 
+ 
+.font{
+	z-index:10;
+	background:rgba(51,51,51,0.5);
+	
+	}
+.one,.two{
+	color:white;
+	font-size:25px;
+	font-weight:bolder;
+	height:40px;
+	line-height:50px;
+	text-align:center;
+	letter-spacing:5px;
+	height:50px;
+	width:130px;
+	}
+	
+.two{
+		font-size:20px;
+		letter-spacing:3px;
+	
+	
+	}	
+	
+	
+.leftTop{
+	line-height:30px;
+	
+	}
+.leftTop img{
+	height:84px;
+	width:140px;
+	float:left;
+	}
+	
+ 
+#leftBottom{
+	width:305px;
+	height:200px;
+	}	
+	
+#leftBottom li{
+	 list-style:inside url(image/icon03.png);
+	 line-height:25px;
+	 font-size:18px;
+	
+	
+	}	
+	
+#leftBottom li:hover{
+	text-decoration:underline;
+	}
+	
+span img {
+	width:128px;
+	height:66px;
+	margin-left:20px;
+	
+	}
+	
+	
+
+
+
+
+
+
+
+
+	
+	
+.con_div{
+	width:700px;
+	height:220px;
+	line-height:26px;
+	font-size:16px;
+	}
+.con_div span{
+	font-size:20px;
+	color:#29D299;
+	}
+.imgSpecial{
+	width:150px;
+	height:190px;
+	float:left;
+	padding-right:15px;
+	
+	
+	}
+	
+
+
+.littleNov{
+	width:700px;
+	height:35px;
+	}
+.littleNov li,.zan li{
+		float:left;
+		padding:0 20px;
+		line-height:35px;
+		text-align:center;
+		cursor:pointer;
+
+		}
+.littleNov li:hover{
+	background:url(image/bg.png) no-repeat center;
+	color: #FFF;
+	}		
+
+#concent{
+		width:2120px;
+		height:666px;
+		position:absolute;
+		top:40;
+		left:0;
+}
+
+
+#concent li{
+	float:left;
+	padding:0 2px;
+	}
+
+ #base{
+	 width:705px;
+	 height:670px;
+	 position:relative;
+	 overflow:hidden;
+	
+	 
+	}
+
+#right{
+	width:700px;
+	height:800px;
+	}
+
+.con_div:hover{
+	background-color: #CCC;
+	
+	
+	}
+
+#conChange,#right{
+	float:left;
+	padding-left:100px;
+	
+	
+	}
+#end{
+	width:600px;
+	height:20px;
+	}
+#end li{
+	width:20px;
+	height:20px;
+	border: 1px solid #29D2B3;
+	float:left;
+	margin:0 10px;
+	font-size:12px;
+	text-align:center;
+	color:#29D2B3;
+	cursor:pointer;
+	}
+#end .fly:hover{
+	background-color:#29D2B3;
+	color:#FFF;
+	font-weight:bolder;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+#footer{
+	height:110px;
+	background-color:#333;
+	clear:both;
+	color:#FFF;
+	text-align:center;
+	line-height:30px;
+	}
+	
+/*下面是对一些特定的文字进行样式控制*/
+p{
+	color:#FF8A05;
+	font-size:20px;
+	font-weight:bolder;
+	
+	}
+#leftBottom span{
+	color:#24D197;
+	
+	
+	}
+	
+	
+	
+	
+/*以下是jq需要的类*/
+
+.changeBgcolor{
+	background-color:#24D197;
+	}

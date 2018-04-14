@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>demo</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				font-size: 12px;
+				padding: 100px;
+			}
+			.box_all{
+				float: left;
+				padding: 0px;
+				background: #eee;
+				position: absolute;
+				top: 30%;
+				left: 30%;
+			}
+			.box{
+				width: 500px;				
+				border: 1px solid #4c7ebd;
+				display: none;
+			}
+			.box h1{
+				height: 30px;
+				line-height: 30px;
+				color:#fff; 
+				font-size:14px; 
+				background:#87b0e1; 
+				padding-left:10px;
+			}
+			.box span{
+				float: right;
+				padding-right: 10px;
+				cursor: pointer;
+			}
+			.box span a{
+				display: block;
+				height: 30px;
+				width: 30px;
+				background: url(close.jpg) no-repeat;
+				text-indent:-9999px;
+			}
+			.box span a:hover{
+				background:url(close_hover.jpg) no-repeat;
+			}
+			.box p{
+				padding: 10px;
+				height: 400px;
+				background:#fff; 
+				border:3px solid #eee;
+			}
+			.one{
+				display: block;
+			}
+	    </style>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="jquery.easydrag.handler.beta2.js"></script>
+		<script type="text/javascript">
+		$(function(){
+			$('.one').click(function(){
+				$('.box').show();
+				$('.box_all').CSS('padding','5px');
+			})
+			$('span').click(function(){
+				$('.box').hide();
+				$('.box_all').CSS('padding','0px');
+			})
+			$('.box_all').easydrag();
+		})
+		</script>
+	</head>
+	<body>
+		<a href="#" class="one">open one page</a><br />
+		<input type="submit" class="one" value="VGN" /><br />
+		<input type="text" class="one" value="text" />
+		
+		<div class="box_all">
+			<div class="box">
+				<h1><span><a href="#">close</a></span>this is title</h1>
+			    <p>this is content</p>
+			</div>			
+		</div>
+	</body>
+</html>

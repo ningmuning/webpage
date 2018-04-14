@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>tab</title>
+		<style type="text/css">
+			* { padding:0; margin:0;}
+            body {  padding:100px; font:12px "宋体";}
+.box { width:500px; border-bottom:1px solid #CCC;}
+.box h1 { height:30px; line-height:30px; padding:0 10px; font-size:12px; cursor:pointer; border:1px solid #ccc; border-bottom:none; background:#eee url(img/bg.gif) no-repeat right -27px;}
+
+.box h1.hover { background-color:#e3e2e2;}
+.box h1.active { background-position:right 7px; }
+
+.box p { padding:10px; border-left:1px solid #ccc; border-right:1px solid #ccc;}
+			/*body { 
+				font-size:12px;
+				background:#000; 
+				font-family:"宋体";
+			}
+			ul { 
+				list-style-type:none; 
+			}
+			a { 
+				color:#fff; 
+				text-decoration:none; 
+			}
+			.container { 
+				width:1024px; 
+				height:1000px; 
+				background:url(img/1.jpg) no-repeat; 
+				margin:0 auto; 
+				padding-top:100px; 
+			}
+			.menu { 
+				height:30px; 
+				line-height:30px; 
+				background:url(img/bg1.png) repeat-x; 
+			}
+			.menu li { 
+				float:left; 
+				position:relative; 
+			}
+			.menu li a:hover{
+				color: #000;
+				background: url(img/bg1.png);
+			}		
+			.menu li.focusa{
+				background: url(img/bg_focus.png);
+			}	
+			.menu li a { 
+				display:block; 
+				float:left; 
+				height:30px; 
+				line-height:30px; 
+				padding:0 20px; 
+			}
+			.menu li ul { 
+				position:absolute; 
+				background:url(img/bg2.png); 
+				width:150px; 				
+				border:1px solid #000; 
+				display: none;
+			}
+			.menu li ul a { 
+				width:110px; 
+			}
+			.one { 
+				border:1px solid #000; 
+				top:30px; 
+			}
+			.one li a:hover { 
+				background:url(img/bg1.png); 
+			}
+			.two { 
+				left:150px; 
+			}
+			.one li a.more { 
+				background:url(img/there.png) no-repeat 130px center; 
+			}
+			.one li a.more:hover { 
+				background:url(img/there.png) no-repeat 130px center;
+		    }
+		    .menu li ul.hdw {
+		    	left:150px;
+		    }
+		    .menu li ul.hdwq{
+		    	left: 150px;
+		    }*/
+		</style>
+		<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+ <!--       <script type="text/javascript" src="js/DD_belatedPNG.js"></script>-->
+		<script type="text/javascript">
+			$(function(){
+				$('.box h1:first').addClass('active');
+				$('p:gt(0)').hide();
+//              $('.box p:not(:first)').hide();
+				$('.box h1').hover(function(){
+					$(this).addClass('hover');
+				},function(){
+					$(this).removeClass();
+				});
+				$('.box h1').click(function(){
+					$(this).next('p').slideToggle().siblings('p').slideUp();
+					$(this).toggleClass('active').siblings('h1').removeClass('active');
+				})
+//				$('.menu li').hover(function(){
+//					$(this).children('ul').show();
+//					$(this).focus().addClass('focusa');
+//				},function(){
+//					$(this).children('ul').hide();
+//					$(this).focus().removeClass('focusa');
+//				});
+//				DD_belatedPNG.fix('ul,.more');
+			});
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<h1>标题一</h1>
+			<p>内容</p>
+			<h1>标题二</h1>
+			<p>内容</p>
+			<h1>标题三</h1>
+			<p>内容</p>
+			<h1>标题四</h1>
+			<p>内容</p>
+			<h1>标题五</h1>
+			<p>内容</p>
+		</div>
+		<!--联级菜单-->
+		<!--<div class="container">
+			<ul class="menu">
+				<li><a href="#">菜单一</a>
+					<ul class="one">
+						<li><a href="#">菜单一</a></li>
+                        <li><a href="#">菜单二</a></li>
+                        <li><a href="#">菜单三</a></li>
+                        <li><a href="#">菜单四</a></li>
+                        <li><a href="#" class="more">菜单五</a>
+                        	<ul class="two">
+                        		<li><a href="#">菜单一</a></li>
+                                <li><a href="#">菜单二</a></li>
+                                <li><a href="#">菜单三</a></li>
+                                <li><a href="#">菜单四</a></li>
+                                <li><a href="#" class="more">菜单五</a>
+                                	<ul class="hdw">
+                                		<li><a href="#">菜单一</a></li>
+                						<li><a href="#">菜单二</a></li>
+                						<li><a href="#">菜单三</a></li>
+                						<li><a href="#">菜单四</a></li>
+                						<li><a href="#">菜单五</a></li>
+                                	</ul>
+                                </li>
+                        	</ul>
+                        </li>
+					</ul>
+				</li>
+				<li><a href="#">菜单二</a></li>
+    			<li><a href="#">菜单三</a>
+    				<ul class="one">
+						<li><a href="#">菜单一</a></li>
+                        <li><a href="#">菜单二</a></li>
+                        <li><a href="#">菜单三</a></li>
+                        <li><a href="#">菜单四</a></li>
+                        <li><a href="#" class="more">菜单五</a>
+                        	<ul class="two">
+                        		<li><a href="#">菜单一</a></li>
+                                <li><a href="#">菜单二</a></li>
+                                <li><a href="#">菜单三</a></li>
+                                <li><a href="#">菜单四</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+    			</li>
+    			<li><a href="#">菜单四</a></li>
+    			<li><a href="#">菜单五</a></li>
+			</ul>
+		</div>-->
+	</body>
+</html>

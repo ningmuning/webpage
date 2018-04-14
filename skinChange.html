@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>skin</title>	
+		<link rel="stylesheet" type="text/css" href="css/ddw.css" />
+		<link rel="stylesheet" type="text/css" href="css/skin_1.css" id="cssfile"/>
+		<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("li").click(function(){
+					$("#"+this.id).addClass("selected").siblings().removeClass("selected");
+					$("#cssfile").attr("href","css/"+this.id+".css");
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li id="skin_1" class="selected"></li>
+			<li id="skin_2"></li>
+			<li id="skin_3"></li>
+		</ul>
+		<div class="box"></div>
+	</body>
+</html>

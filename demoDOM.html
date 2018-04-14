@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>element</title>
+	</head>
+	<body>
+		<!--<p name="pn">hello</p>
+		<p name="pn">hello</p>
+		<p name="pn">hello</p>
+		<p name="pn">hello</p>
+		<a id="aid" title="hello,nice to meet you">hi</a>
+		<a id="aid2"></a>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>-->
+		<input type="text" id="txt" />
+		<input type="button" onclick="skipPage()" value="skip" />
+		<div id="box_div">
+			<p id="pd">div的p元素</p>
+		</div>
+		<script>
+//			var count=document.getElementsByName("pn");
+//          var count=document.getElementsByTagName("p");
+//			count[2].innerHTML="world";
+//			alert(count.length);
+			
+//			function getAttr(){
+//				var anode=document.getElementById("aid");
+//				var attr=anode.getAttribute("id");//两个都可以
+//				var attr=anode.getAttribute("title");
+//				alert(attr);
+//			}
+//			getAttr();
+			
+//			function setAttr(){
+//				var anode=document.getElementById("aid2");
+//				anode.setAttribute("title","hello world");
+//				var attr=anode.getAttribute("title");
+//				alert(attr);
+//			}
+//			setAttr();
+//          function getChildNode(){
+//          	var chileNode=document.getElementsByTagName("ul")[0].childNodes;
+//          	alert(chileNode.length);
+//          	alert(chileNode[0].nodeType);
+//          	//ul,li的位置会影响这两个值的变化，如果ul,li在一排，或者如上图所示等
+//          }
+//          getChildNode();
+            function skipPage(){
+//          	var txt=document.getElementById("txt").value;
+//          	if(txt=="hello"){
+//          		history.go(-1);
+//          	}else{
+//          		alert("error");
+//          	}
+                window.open("jsdemo.html","windowname","height=500,width=500,top=10,left=20,toobar=no,menubar=no");
+//              window.close();
+            }
+//          people=new Object();
+//          people.name="jack";
+//          people.age=19;
+//          document.write("name:"+people.name+",age:"+people.age);
+            function people(name,age){
+//          	this.name=name;
+//          	this.age=age;
+                this.n=name;
+                this.a=age;
+            }
+            son=new people("tom",20);
+            document.write("name:"+son.n+",age:"+son.a);
+            function getParentNode(){
+            	var div=document.getElementById("pd");
+            	alert(div.parentNode.nodeName);
+            }
+//          getParentNode();
+//          function createNode(){
+//          	var body=document.body;
+//          	var input=document.createElement("input");
+//          	input.type="button";
+//          	input.value="按钮";
+//          	body.appendChild(input);
+//          }
+//          createNode();
+            function addNode(){
+            	var oiv=document.getElementById("box_div");
+            	var node=document.getElementById("pd");
+            	var newnode=document.createElement("p");
+            	newnode.innerHTML="please move and move";
+            	oiv.insertBefore(newnode,node);
+            }
+//          addNode();
+            function removeNode(){
+            	var oiv=document.getElementById("box_div");
+            	var p=oiv.removeChild(oiv.childNodes[1]);
+            }
+//          removeNode();
+			function getSize(){
+//				var width=document.documentElement.offsetWidth;
+//				var height=document.documentElement.offsetHeight;
+				var width=document.documentElement.offsetWidth;
+				var height=document.body.offsetWidth||document.body.offsetHeight;
+				alert(width+","+height);
+			}
+			getSize();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>show or hide</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				font-size: 12px;
+			}
+			ul{
+				list-style-type: none;
+			}
+			a{
+				text-decoration: none;
+				color: #666;
+				font-family:"宋体";
+			}
+			a:hover{
+				text-decoration: underline;
+				color: red;
+			}
+			.content{
+				width: 600px;
+				margin: 40px auto 0 auto;
+				border: 1px solid #ccc;
+				text-align: center;
+			}
+			.container{
+				border: 5px solid #eee;
+				padding: 10px;
+			}
+			.content ul{
+				padding-left: 10px;
+			}
+			.content ul li{
+				float: left;
+				width: 170px;
+				margin-right: 15px;
+				line-height: 20px;
+			}
+			.boxmore{
+				clear: both;
+				padding-top: 10px;
+			}
+			.boxmore a{
+				display: block;
+				width: 120px;
+				line-height: 24px;
+				border: 1px solid #aaa;
+				margin: 0 auto;
+			}
+			.boxmore a span{
+				padding-right: 15px;
+				background: url(img/down.gif) no-repeat right 0;
+			}			
+		</style>
+		<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var showli=$('.content ul li:gt(5):not(:last)');
+				showli.hide();
+				$(".boxmore a span").click(function(){
+					if(showli.is(':visible')){
+						showli.hide();
+						$('.boxmore a span').css('background','url(img/down.gif) no-repeat right 0').text("显示全部资源");
+					}else{
+						$('.content ul li').show();
+						$('.boxmore a span').css('background','url(img/up.gif) no-repeat right 0').text("精简资源");
+					}
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="content">
+			<div class="container">
+				<ul>
+					<li ><a href="#">XHTML网页基础教程</a><span>(30440) </span></li>
+      				<li ><a href="#">DEDE织梦CMS教程</a><span>(27220) </span></li>
+      				<li ><a href="#">网页布局</a><span>(20808) </span></li>
+     				<li ><a href="#">Mysql数据库视频教程</a><span>(17821) </span></li>
+      				<li ><a href="#">DreamWeaverCS5</a><span>(12289) </span></li>
+      				<li ><a href="#">PhotoShop视频教程</a><span>(8242) </span></li>
+      				<li ><a href="#">PHP视频教程</a><span>(14894) </span></li>
+      				<li ><a href="#">After Effects视频教程</a><span>(9520) </span></li>
+      				<li ><a href="#">建站知识</a><span>(2195) </span></li>
+      				<li ><a href="#">DIV+CSS</a><span>(4114) </span></li>
+      				<li ><a href="#">高清图片下载</a><span>(12205) </span></li>
+      				<li ><a href="#">网页模版下载</a><span>(1466) </span></li>
+      				<li ><a href="#">图标资源下载</a><span>(3091) </span></li>
+      				<li ><a href="#">其它资源</a><span>(7275) </span></li>
+				</ul>
+				<div class="boxmore">
+					<a href="#"><span>显示全部资源</span></a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

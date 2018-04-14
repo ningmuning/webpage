@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>js</title>
+		<style type="text/css">
+			.div{
+				width: 200px;
+				height: 100px;
+				background: gray;
+			}
+		</style>
+		<script>
+			function onOver(obj){
+				obj.innerHTML="hello";
+			}
+			function onOut(obj){
+				obj.innerHTML="world";
+			}
+			
+			function show(){
+				alert("hello");
+			}
+			
+			function demo(){
+				alert("change");
+			}
+			function demo2(obj){
+				obj.style.background="blue";
+			}
+			function demo3(obj){
+				obj.style.background="green";
+			}
+			function demo4(obj){
+				obj.style.background="white";
+			}
+			function demo5(){
+				try{
+					var obj=document.getElementById("txt").value;
+					if(obj==""){
+						throw "name is null";
+					}
+				}catch(er){
+					alert(er);
+				}
+			}
+		</script>
+		<script>
+			function add(){
+				var i=10;
+				var j=10;
+				var m=i+j;
+				document.getElementById("sum").innerHTML=m;
+			}	
+			var arr=["5","1","2","7","4"];
+			document.write(arr.sort(function(a,b){
+				return b-a;
+			}));
+			var a=["a","b"];
+//			a.push("c");
+			document.write(a.push("c"));
+			
+			function startTime(){
+				var today=new Date();
+				var h=today.getHours();
+				var m=today.getMinutes();
+				var s=today.getSeconds();
+				m=checkTime(m);
+				s=checkTime(s);
+				document.getElementById("timetxt").innerHTML=h+":"+m+":"+s;
+				t=setTimeout(function(){
+					startTime();
+				},500);
+			}
+			function checkTime(i){
+				if(i<10){
+					i="0"+i;
+				}
+				return i;
+			}
+		</script>
+		<script>
+			var win;
+			function showTime(){
+				alert("hello");
+				win=setTimeout(function(){
+					showTime();//每隔3秒弹出一次
+//                  alert("hello");//3秒后弹出
+				},3000);
+			}
+			function stopTime(){
+				clearTimeout(win);
+			}
+		</script>
+<!--		<script src="js/jsdemo.js"></script>-->
+	</head>
+<!--	<body onload="startTime()">-->
+	<body onload="showTime()">
+		<div class="div" onmouseover="onOver(this)" onmouseout="onOut(this)"></div>
+		<button onclick="show()" style="width: 40px;height: 25px;">show</button>
+		<input type="text" onchange="demo()" onselect="demo2(this)" onfocus="demo3(this)" onblur="demo4(this)" />
+		<input type="text" id="txt" />
+		<input type="button" id="btn" value="login" onclick="demo5()" />
+		<p>i=10,j=10,i+j=?</p>
+		<p id="sum"></p>
+		<input type="button" value="compute" onclick="add()" />
+		<div id="timetxt"></div>
+		<!--<script src="js/jsdemo.js"></script>-->
+		<input type="button" value="cancel" onclick="stopTime()" />
+		<input type="button" value="button" onclick="getLoc()" />
+		<button id="listen">hello world</button><br />
+		<img src="you.jpg" id="imgid" />
+		<button onclick="imgChange()">img</button>
+		<a href="demoDOM.html">skip</a>
+		<script>
+			function imgChange(){
+				document.getElementById("imgid").src="psb.jpg";
+			}
+			function getLoc(){
+				location.assign("http://www.baidu.com/");
+			}
+//			document.getElementById("listen").addEventListener("click",function(){
+//				alert("hahaha");
+//			});
+            var x=document.getElementById("listen");
+            x.addEventListener("click",hello);
+            x.addEventListener("click",world);//此处函数没有没有括号
+            x.removeEventListener("click",hello);
+            x.removeEventListener("click",world);
+            function hello(){
+            	alert("lalala");
+            }
+            function world(){
+            	alert("world");
+            }
+            var i=[1,2,3,4];
+            for(var j in i){
+            	document.write(i[j]+"<br />");
+            }
+		</script>
+	</body>
+</html>
